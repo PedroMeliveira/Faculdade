@@ -1,0 +1,17 @@
+função Minuscula(s: string): string
+var
+    função M(T: inteiro): string
+    inicio
+        se T = '0' entao
+            returne ""
+        senão
+            se 'A' <= s[T] e 'Z' >= s[T] entao
+                returne M(T - 1) + chr(asc('A') - asc(s[T]) + asc('a'))
+            senão
+                returne M(T - 1) + s[T]
+            fim se
+        fim se
+    fim função
+inicio
+    returne M(tamanho(s))
+fim função
