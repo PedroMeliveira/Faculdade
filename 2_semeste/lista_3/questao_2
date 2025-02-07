@@ -1,0 +1,54 @@
+
+# Muito Confuso, tentar fazer ordenando as 2 strings, usando recursao e depois compara-las
+
+
+função Verifica_anagrama(s1, s2: string): lógica
+var 
+
+    função Minuscula(s: string): string
+    var
+        função M(T: inteiro): string
+        inicio
+            se T = '0' entao
+                retorne ""
+            senão
+                se 'A' <= s[T] e 'Z' >= s[T] entao
+                    retorne M(T - 1) + chr(asc('A') - asc(s[T]) + asc('a'))
+                senão
+                    retorne M(T - 1) + s[T]
+                fim se
+            fim se
+        fim função
+    inicio
+        retorne M(tamanho(s))
+    fim função
+
+    função compara_caracter(s2, t1, t2: inteiro): lógica
+    inicio
+        se t1 = 0 entao
+            retorne VERDADEIRO
+        fim se
+        se s1[t1] = s2[t2] entao
+            retorne VERDADEIRO e compara_caracter(s2, t1 - 1, tamanho(s2))
+        fim se
+        se t2 = 0 entao
+            retorne FALSO
+        fim se
+        retorne compara_caracter(s2, t1, t2 - 1)
+    fim função
+
+inicio
+    se tamanho(s1) = 0 ou tamanho(s2) = 0 entao
+        retorne FALSO
+    fim se
+    se tamanho(s1) != tamanho(s2) entao
+        retorne FALSO
+    fim se
+    s1 <- Minuscula(s1)
+    s2 <- Minuscula(s2)
+    se compara_caracter(s2, tamanho(s1),tamanho(s2)) e compara_caracter(s1, tamanho(s2), tamanho(s1)) entao
+        retorne VERDADEIRO
+    senão
+        retorne FALSO
+    fim se
+fim função
