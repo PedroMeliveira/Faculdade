@@ -1,0 +1,7 @@
+função Escreve_Somatorio(num: inteiro): inteiro
+inicio
+    se num = 0 entao
+        escreva(0)
+    fim se
+    escreva(Escreve_Somatorio(num - 1) + num)
+fim função
