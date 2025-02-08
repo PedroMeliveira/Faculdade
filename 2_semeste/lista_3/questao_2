@@ -5,24 +5,6 @@
 função Verifica_anagrama(s1, s2: string): lógica
 var 
 
-    função Minuscula(s: string): string
-    var
-        função M(T: inteiro): string
-        inicio
-            se T = '0' entao
-                retorne ""
-            senão
-                se 'A' <= s[T] e 'Z' >= s[T] entao
-                    retorne M(T - 1) + chr(asc('A') - asc(s[T]) + asc('a'))
-                senão
-                    retorne M(T - 1) + s[T]
-                fim se
-            fim se
-        fim função
-    inicio
-        retorne M(tamanho(s))
-    fim função
-
     função compara_caracter(s2, t1, t2: inteiro): lógica
     inicio
         se t1 = 0 entao

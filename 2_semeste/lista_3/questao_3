@@ -3,18 +3,23 @@ var
 
     função Tamanho_num(num: inteiro): inteiro
     inicio  
-        se num = 0 entao
+        se num div 10 = 0 entao
             retorne 1
-        fim se
-        se num < 100 entao
-            retorne 10
-        fim se
-        retorne 10 * Tamanho_num(num div 10)
+        senao
+            retorne Tamanho_num(num div 10) * 10
+        fim se 
     fim função
 
 inicio
-    se num <= 9 entao
+    se num < 0 entao
+        neg <- -1
+        num <- abs(num)
+    senao
+        neg <- 1
+    fim se
+
+    se num div 10 = 0 entao
         retorne num
     fim se
-    retorne num mod 10 * Tamanho_num(num) + Reverso(num div 10)
+    retorne (num mod 10 * Tamanho_num(num) + Reverso(num div 10)) * neg
 fim função

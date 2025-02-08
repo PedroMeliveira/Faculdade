@@ -1,0 +1,10 @@
+função Fibonacci(num:inteiro): inteiro
+inicio
+    se num < 0 entao
+        retorne 0
+    fim se
+    se num = 1 ou num = 2 entao
+        retorne 1
+    fim se
+    retorne Fibonacci(num - 1) + Fibonacci(num - 2)
+fim função
