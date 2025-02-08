@@ -1,0 +1,16 @@
+função Qnts_B_em_A(a,b: inteiro):inteiro
+inicio
+    se b div 10 != 0 entao
+        retorne -1
+    fim se
+    se a < 0 ou b < 0 entao
+        retorne -1
+    fim se
+    se a = 0 entao
+        retorne 0
+    fim se
+    se a mod 10 = b entao
+        retorne 1 + Qnts_B_em_A(a div, b)
+    fim se
+    retorne Qnts_B_em_A(a div 10, b) 
+fim função

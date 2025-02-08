@@ -1,5 +1,16 @@
 função MDC(a, b: inteiro): inteiro
+var
+    aux: inteiro
+inicio
+    a <- abs(a)
+    b <- abs(b)
+    se b > a entao
+        aux <- b
+        b <- a
+        a <- aux
+    fim se
     se a mod b = 0 entao
         retorne b
     fim se
     retorne MDC(b, a mod b)
+fim função

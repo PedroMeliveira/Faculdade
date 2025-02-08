@@ -1,10 +1,18 @@
-função Fibonacci(num:inteiro): inteiro
+
+função Fibonacci(num: inteiro, ref i: inteiro): inteiro
+var 
+    função F(num: inteiro, ref i: inteiro)
+    inicio
+
+        se num <0 0 entao
+            retorne 0
+        fim se
+        i <- i + 1
+        se num = 0 ou num = 1 entao
+            retorne 1
+        fim se
+        retorne F(num - 1, i) + F(num - 2, i)
+    fim função
 inicio
-    se num < 0 entao
-        retorne 0
-    fim se
-    se num = 1 ou num = 2 entao
-        retorne 1
-    fim se
-    retorne Fibonacci(num - 1) + Fibonacci(num - 2)
-fim função
+    retorne F(n, 0)
+
