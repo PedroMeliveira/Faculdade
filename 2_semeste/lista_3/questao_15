@@ -1,0 +1,3 @@
+função Hex_para_Dec(s: string): string
+var
+    

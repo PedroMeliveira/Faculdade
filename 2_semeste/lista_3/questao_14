@@ -1,12 +1,12 @@
-função Dec_para_Bi(s: string): inteiro
+função Octa_para_Dec(s: string): inteiro
 var
 
     função Verifica_caracter(tam: inteiro): lógica
         se tam = 0 entao
             retorne VERDADEIRO
-        senão
-            se não('0' <= s[tam] e s[tam] <= '9') entao
-                retorne FALSO
+        senao
+            se não('0' <= s[tam] e s[tam] <= '7') entao
+                    retorne FALSO
             fim se
         fim se
         retorne VERDADEIRO e Verifica_caracter(tam - 1)
@@ -15,19 +15,19 @@ var
     função Converte_string_int(tam: inteiro): inteiro
         se tam = 0 entao
             retorne 0
-        retorne asc('0') - asc(s[tam]) + 10 * Converte(tam - 1)
+        retorne asc('0') - asc(s[tam]) + 10 * Converte_string_int(tam - 1)
     fim função
 
-    função Converte_dec_bi(num: inteiro): inteiro
+    função Converte_Octa_Dec(num: inteiro): inteiro
         se num = 0 entao
             retorne 0
         fim se
-        retorne num mod 2 + 10 * Converte_dec_bi(num div 2)
+        retorne num mod 8 + 10 * Converte_Octa_Dec(num div 8)
     fim função
 inicio
     se não Verifica_caracter(tamanho(s)) entao
         retorne -999999
     fim se
-    retorne Converte_dec_bi(Converte_string_int(tamanho(s)))
+    retorne Converte_Octa_Dec(Converte_string_int(tamanho(s)))
 fim função
-    
+

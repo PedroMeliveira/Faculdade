@@ -1,0 +1,12 @@
+função Bi_para_Dec(num: inteiro): inteiro
+inicio
+    se num = 0 entao
+        retorne 0
+    fim se
+    se num mod 10 != 0 e num mod 10 != 1 entao
+        retorne -999999
+    senao
+        retorne num mod 10 + 2 * Bi_para_Dec(num div 10)
+    fim se
+fim função
+
