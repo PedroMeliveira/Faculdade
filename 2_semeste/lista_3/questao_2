@@ -1,36 +1,31 @@
+função Anagrama(s, t: string): lógica
+var
 
-# Muito Confuso, tentar fazer ordenando as 2 strings, usando recursao e depois compara-las
+    função ana(ns: inteiro): lógica
+    var
 
-
-função Verifica_anagrama(s1, s2: string): lógica
-var 
-
-    função compara_caracter(s2, t1, t2: inteiro): lógica
+        função Q(ref r: string, m: inteiro): inteiro
+        inicio
+            se m = 0 entao
+                retorne 0
+            fim se
+            se s[ns] = r[m] entao
+                retorne 1 + Q(r, m - 1)
+            senao
+                retorne Q(r, m - 1)
+            fim se
+        fim função
     inicio
-        se t1 = 0 entao
+        se ns = 0 entao
             retorne VERDADEIRO
+        senao
+            retorne Q(s, tamanho(s)) = Q(t, tamanho(t)) e ana(ns-1)
         fim se
-        se s1[t1] = s2[t2] entao
-            retorne VERDADEIRO e compara_caracter(s2, t1 - 1, tamanho(s2))
-        fim se
-        se t2 = 0 entao
-            retorne FALSO
-        fim se
-        retorne compara_caracter(s2, t1, t2 - 1)
     fim função
-
 inicio
-    se tamanho(s1) = 0 ou tamanho(s2) = 0 entao
+    se (s = t) ou (tamanho(s) != tamanho(t)) entao
         retorne FALSO
-    fim se
-    se tamanho(s1) != tamanho(s2) entao
-        retorne FALSO
-    fim se
-    s1 <- Minuscula(s1)
-    s2 <- Minuscula(s2)
-    se compara_caracter(s2, tamanho(s1),tamanho(s2)) e compara_caracter(s1, tamanho(s2), tamanho(s1)) entao
-        retorne VERDADEIRO
     senão
-        retorne FALSO
+        retorne ana(tamanho(s))
     fim se
 fim função
