@@ -1,0 +1,20 @@
+função Dec_para_Hex(num: inteiro): string
+var
+
+    função Converte(num: inteiro): string
+    se num = 0 entao
+        retorne ''
+    fim se
+    se num mod 16 > 9 entao
+        retorne Dec_para_Hex(num div 16) + chr(asc('A') + num mod 16 - 10)
+    senao
+        retorne Dec_para_Hex(num div 16) + chr(asc('0') + num mod 16)
+    fim se
+
+inicio
+    se num = 0 entao
+        retorne '0'
+    fim se
+    retorne Converte(num)
+fim função
+
