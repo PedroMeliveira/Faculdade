@@ -1,0 +1,14 @@
+função Dec_para_Bi(s: string): inteiro
+var
+    função Converte(tam: inteiro): inteiro
+        se não('0' <= s[tam] e s[tam] <= '9') entao
+            retorne -999999
+        fim se
+        se tam = 0 entao
+            retorne 0
+        retorne asc('0') - s[tam] + 10 * Converte(tam - 1)
+inicio
+    se Converte(tamanho(s)) = 0 entao
+        retorne 0
+    fim se
+    
