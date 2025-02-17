@@ -15,6 +15,9 @@ inicio
     se num = 0 entao
         retorne '0'
     fim se
+    se num < 0 entap
+        num <- abs(num)
+    fim senao
     retorne Converte(num)
 fim função
 
