@@ -1,7 +1,31 @@
-função Escreve_Somatorio(num: inteiro): inteiro
-inicio
-    se num = 0 entao
-        escreva(0)
+função Somatorio(num: inteiro): inteiro
+var
+
+    função Soma(i: inteiro): inteiro
+    var
+
+        função S(n, x: inteiro): inteiro
+        inicio
+            se n = x entao
+                retorne n 
+            fim se
+            retorne x + S(n, x + 1)
+        fim função
+
+    inicio
+        se num = i entao
+            escreva(S(i, 0))
+            retorne S(i, 0)
+        senao
+            escreva(S(i, 0), ", ", Soma(i + 1))
+            retorne S(i, 0) + Soma(i + 1)
+        fim se
+    fim função
+
+inicio  
+    se n < 0 entao
+        retorne -1
     fim se
-    escreva(Escreve_Somatorio(num - 1) + num)
+    retorne Soma(0)
 fim função
+        
