@@ -1,2 +1,27 @@
 const
+    MAX = 1000
+tipos
+    vet = vetor[1..MAX] de string
+var
+    função Menor_String(v: vet, tam: inteiro) string
+    var
+
+        função Encontra_menor(v: vet, n: inteiro, menor: string): string
+        inicio
+            se n = 0 entao
+                retorne menor
+            fim se
+            se v[n] < menor entao
+                menor <- v[n]
+            fim se
+            retorne Encontra_menor(v, n - 1, menor)
+        fim função
+    inicio
+        se tam < 1 entao
+            retorne ""
+        fim se
+        retorne Encontra_menor(v, tam - 1, v[tam])
+    fim função
+
+
     
