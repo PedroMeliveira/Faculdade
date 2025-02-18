@@ -1,0 +1,29 @@
+tipos
+    Vet = vetor[0..5] de inteiro
+função F(ref a: Vet; n: inteiro): inteiro
+início
+    se n ≤ 0 então
+        retorne 1
+    fim se
+    retorne a[n − 1] × F(a, n − 2) + 1
+fim função
+
+F(a, 6), a = {0, 1, 2, 3, 4, 5}
+
+a[6 - 1] X F(a, 4) + 1
+
+a[5] = 4
+
+4 X F(a, 4) + 1 = 4 X 3 + 1 = 13
+
+F(a, 4) = a[4 - 1] X F(a, 2) + 1
+
+a[3] = 2
+
+F(a, 4) = 2 X F(a, 2) + 1 = 2 x 1 + 1 = 3
+
+F(a, 2) = a[1] X F(a, 0) + 1
+        = 0 X 1 + 1 = 1
+
+
+F(a, 6) = 13

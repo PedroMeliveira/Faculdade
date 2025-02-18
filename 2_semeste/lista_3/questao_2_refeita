@@ -1,0 +1,26 @@
+função Anagrama(s, t: string): lógica
+var
+    função Ana(ns: inteiro): lógica
+    var
+        função Q(ref r: string, m: inteiro): inteiro
+        inicio
+            se m = 0 entao
+                retorne 0
+            fim se
+            se s[ns] = r[m] entao
+                retorne 1 + Q(r, m - 1)
+            fim se
+            retorne Q(r, m - 1)
+        fim função
+    inicio
+        se ns = 0 entao
+            retorne VERDADEIRO
+        fim se
+        retorne (Q(s, tamanho(s)) = Q(t, tamanho(s)) e Ana(ns - 1)
+    fim função
+inicio
+    se (s = t) ou (tamanho(s) != tamanho(t)) entao
+        retorne FALSO
+    fim se
+    retorne Ana(tamanho(s))
+fim função

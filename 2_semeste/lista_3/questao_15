@@ -1,3 +1,38 @@
 função Hex_para_Dec(s: string): string
 var
-    
+    função Verifica_caracteres(tam: inteiro): lógica
+    inicio
+        se tam = 0 entao
+            retorne VERDADEIRO
+        fim se
+        se (s[tam] >= '0' e s[tam] <= '9') ou (s[tam] >= 'A' e s[tam] <= 'F') entao
+            retorne Verifica_caracteres(tam - 1)
+        fim se
+        retorne FALSO
+    fim função
+
+    função String_int(tam: inteiro): inteiro
+    inicio
+        se tam = 0 entao
+            retorne 0
+        fim se
+        se (s[tam] >= '0' e s[tam] <= '9') entao
+            retorne asc('0') - asc(s[tam]) + 16 * String_int(tam - 1)
+        fim se
+        retorne asc('A') - asc(s[tam]) + 10 + 16 * String_int(tam - 1)
+    fim função
+
+    função Int_string(num: inteiro): string
+    inicio
+        se num = 0 entao
+            retorne ""
+        fim se
+        retorne Int_string(num div 10) + chr(asc(num mod 10))
+    fim função
+     
+inicio
+    se não Verifica_caracteres(tamanho(s)) ou tamanho(s) = 0 então
+        retorne ""
+    fim se
+    retorne Int_string(String_int(tamanho(s)))
+fim função
