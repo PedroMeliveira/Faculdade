@@ -1,12 +1,22 @@
 função Bi_para_Dec(num: inteiro): inteiro
+var 
+    Verifica(num: inteiro): lógica
+    inicio
+        se num = 0 entao
+            retorne VERDADEIRO
+        fim se
+        se num mod 10 != 0 e num mod 10 != 1 entao
+            retorne FALSO
+        fim se
+        retorne Verifica(num div 10)
+    fim função
 inicio
+    se não Verifica(num) entao
+        retorne -99999
+    fim se
     se num = 0 entao
         retorne 0
     fim se
-    se num mod 10 != 0 e num mod 10 != 1 entao
-        retorne -999999
-    senao
-        retorne num mod 10 + 2 * Bi_para_Dec(num div 10)
-    fim se
+    retorne num mod 10 + 2 * Bi_para_Dec(num div 10)
 fim função
 
