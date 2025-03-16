@@ -16,7 +16,7 @@ var
         se ns = 0 entao
             retorne VERDADEIRO
         fim se
-        retorne (Q(s, tamanho(s)) = Q(t, tamanho(s)) e Ana(ns - 1)
+        retorne Q(s, tamanho(s)) = Q(t, tamanho(s)) e Ana(ns - 1)
     fim função
 inicio
     se (s = t) ou (tamanho(s) != tamanho(t)) entao

@@ -1,0 +1,16 @@
+função posição_do_caracter_na_string(s: string, c: caracter): inteiro
+var
+    função acha_posição(n: inteiro): inteiro
+    inicio
+        se n = 0 entao
+            retorne 0
+        fim se
+        se s[n] = c entao
+            retorne n
+        fim se
+        retorne acha_posição(n-1)
+    fim função
+
+inicio
+    retorne acha_posição(tamanho(s))
+fim função

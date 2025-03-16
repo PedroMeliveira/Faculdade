@@ -1,0 +1,10 @@
+função Dec_para_Octa(num: inteiro): inteiro
+inicio
+    se num = 0 entao
+        retorne 0
+    fim se
+    se num < 0 entao
+        retorne -9999
+    fim se
+    retorne num mod 8 + 10 * Dec_para_Octa(num div 8)
+fim função

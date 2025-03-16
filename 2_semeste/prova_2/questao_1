@@ -1,0 +1,17 @@
+função Maior_lido(n: real): real
+var
+    num, maior: real
+inicio
+
+    leia(num)
+    se num = flag entao
+        retorne num
+    fim se
+
+    maior = Maior_lido(n)
+    se num > maior or maior = flag entao
+        retorne num
+    fim se
+    retorne maior
+
+fim função
