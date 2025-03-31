@@ -1,0 +1,18 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo=registro
+            s: string
+            prox: PNo
+        fim registro
+var
+    função Lista_string_iguais(l1, l2: PNo): lógico	
+    inicio
+        se l1 = NULO e l2 = NULO entao
+            retorne VERDADEIRO
+        fim se
+        se l1 = NULO ou l2 = NULO entao
+            retorne FALSO
+        fim se
+        retorne (l1^s = l2^s) e Lista_string_iguais(l1^prox, l2^prox)
+    fim função 
+        

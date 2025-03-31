@@ -1,0 +1,25 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo=registro
+            n: real
+            prox: PNo
+        fim registro
+var
+    função ApareceXY(x, y: real, ref l: PNo): lógico
+    var
+        função ProcuraXY(apareceu_x : lógico, ref l:PNo): lógico
+        var
+            se l = NULO entao
+                retorne FALSO
+            fim se
+            se l^n = x entao
+                retorne ProcuraXY(VERDADEIRO, l^prox) 
+            fim se
+            se apareceu_x e l^n = y entao
+                retorne VERDADEIRO
+            fim se
+            retorne ProcuraXY(apareceu_x, l^prox)
+        fim função
+    inicio
+        retorne ProcuraXY(FALSO, l)
+    fim função

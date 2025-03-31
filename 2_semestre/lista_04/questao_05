@@ -1,0 +1,34 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo=registro
+            s: string
+            prox: PNo
+        fim registro
+var
+    função ElementosAparecemEmAmbos(l1, l2: Pno): lógico
+    var
+        função PercorreL2(l2: PNo):lógico
+        inicio
+            enquanto l2 != NULO faça
+                se l1^s = l2^s entao 
+                    retorne VERDADEIRO
+                fim se
+                l2 <- l2^prox
+            fim enquanto
+            retorne FALSO
+        fim função
+    inicio
+        se l1 = NULO e l1 = l2 entao
+            retorne VERDADEIRO
+        fim se
+        se l1 = NULO ou l2 = NULO entao
+            retorne FALSO
+        fim se
+        enquanto l1 != NULO faça
+            se PercorreL2(l2) entao
+                l1 <- l1^prox
+            fim se
+            retorne FALSO
+        fim enquanto
+        retorne VERDADEIRO
+    fim função
