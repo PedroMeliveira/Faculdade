@@ -1,0 +1,20 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo=registro
+            s: string 
+            prox: PNo
+        fim registro
+var
+    função Inserir_Inicio_Lista(x: string, ref l: PNo): lógico
+    var
+        novo: PNo
+    inicio
+        novo <- aloca(TNo)
+        se novo = NULO entao
+            retorne FALSO
+        fim se
+        novo^s <- x 
+        novo^prox <- l
+        l <- novo 
+        retorne VERDADEIRO
+    fim função

@@ -1,0 +1,17 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo=registro
+            n: real 
+            prox: PNo
+        fim registro
+var
+função ListaAscendente(l: PNo): lógico
+var
+    se L = NULO ou L^prox = NULO entao
+        retorne VERDADEIRO
+    fim se
+    se l^n <= l^prox^n entao
+        retorne ListaAscendente(l^prox)
+    fim se
+    retorne FALSO
+fim função

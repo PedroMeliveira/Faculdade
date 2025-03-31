@@ -1,0 +1,25 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo=registro
+            s: string 
+            prox: PNo
+        fim registro
+var 
+    função Inserir_X_Ordenado(x: string, ref l: PNo): lógico
+    var
+        novo: PNo
+    inicio  
+        se l = NULO ou x < l^s entao
+            novo <- aloca(TNo)
+            se novo = NULO entao
+                retorne FALSO
+            fim se
+            novo^s <- x 
+            novo^prox <- l
+            l <- novo
+            retorne VERDADEIRO 
+        fim se
+        se x = l^s entao
+            retorne FALSO 
+        fim se
+    fim função
