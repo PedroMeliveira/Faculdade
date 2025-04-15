@@ -1,0 +1,24 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+        num: real
+        prox: PNo
+    fim registro
+var
+    procedimento Encabeça_Ultimo(ref l: PNo)
+    var
+        procedimento Encabeça(p: PNo)
+        inicio
+            se p^prox = NULO entao 
+                p^prox <- l
+                l <- p
+                p <- NULO
+            senao
+                Encabeça(p^prox)
+            fim se
+        fim procedimento
+    inicio
+        se l != NULO e l^prox != NULO entao
+            Encabeça(l^prox)
+        fim se
+    fim procedimento
