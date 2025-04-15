@@ -15,4 +15,5 @@ var
         lixo <- l 
         l <- l^prox
         desaloca(lixo)
+        retorne VERDADEIRO
     fim função
