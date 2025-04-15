@@ -1,0 +1,18 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+        s: string
+        prox: PNo
+    fim registro
+var
+    função Remove_Primeiro_Elemento(ref l: PNo): lógico
+    var
+        lixo: PNo
+    inicio
+        se l = NULO entao
+            retorne FALSO
+        fim se
+        lixo <- l 
+        l <- l^prox
+        desaloca(lixo)
+    fim função
