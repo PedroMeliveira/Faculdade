@@ -1,0 +1,26 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+        s: string
+        prox: PNo
+    fim registro
+var 
+    função Remove_Xs(ref l: PNo, x: string): lógico
+    var
+        função Percorre_Lista(ref l: PNO, removeu: lógico): lógico
+        inicio
+            se l = NULO entao
+                retorne removeu
+            fim se
+            se l^s >= x entao
+                lixo <- l 
+                l <- l^prox
+                desaloca(lixo)
+                retorne Percorre_Lista(l^prox, VERDADEIRO)
+            fim se
+            retorne Percorre_Lista(l^prox, removeu)
+        fim função
+    inicio
+        retorne Percorre_Lista(l, FALSO)
+    fim função
+        
