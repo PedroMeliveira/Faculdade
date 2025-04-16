@@ -5,23 +5,14 @@ tipos
         prox: PNo
     fim registro
 var
-    função Juntar_2_Elementos(ref l: PNo, p: inteiro): lógico
-    var
-        função  Verifica_posição_P(ref l: PNo, x: inteiro): lógico
-        inicio
-            se l = NULO e l^prox = NULO entao   
-                retorne FALSO
-            fim se
-            se x = p entao
-                l^num <- l^num + l^prox^num
-                lixo <- l^prox
-                l^prox <- l^prox^prox
-                desaloca(lixo)
-                retorne VERDADEIRO
-            fim se
-            retorne Verifica_posição_P(l^prox, x + 1)
-        fim função
+    função Juntar_2_Elementos(l: PNo, p: inteiro): lógico
     inicio
-        retorne Verifica_posição_P(l, 1)
+        se l = NULO ou p < 0 ou l^prox = NULO entao
+            retorne FALSO
+        fim se
+        se p = 1 enta
+            l^num <- l^num + l^prox^num
+            retorne VERDADEIRO
+        fim se
+        retorne Juntar_2_Elementos(l^prox, p - 1)
     fim função
-
