@@ -1,0 +1,22 @@
+tipos 
+    PNo = ponteiro para TNo
+    TNo = registro
+        c: caracter
+        prox:  PNo
+    fim registro
+var
+    procedimento Inverte_Lista(ref l: PNo)
+    var
+        p: PNo
+    inicio
+        se l != NULO entao
+            ant <- NULO
+            atual <- l
+            enquanto atual != NULO faça
+                proximo <- atual^prox
+                atual^prox <- ant
+                ant <- atual
+                atual <- proximo
+            fim enquanto 
+            l <- anterior
+        fim se
