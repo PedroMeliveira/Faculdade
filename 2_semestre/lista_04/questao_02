@@ -13,5 +13,9 @@ var
         se l^n = x entao
             retorne 1 + ContaXNaLista(x, l^prox)
         fim se 
-        0retorne ContaXNaLista(x, l^prox)
+        retorne ContaXNaLista(x, l^prox)
     fim função
+
+
+inicio
+    qnt_de_x_na_lista <- ContaXNaLista(6, l)

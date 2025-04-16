@@ -1,0 +1,66 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+        a: inteiro
+        exp: inteiro
+        prox: inteiro
+    fim registro
+var
+    função Adiciona_p3(p1, p2: PNo): PNo
+    var
+        função Adiciona(p1, p2: PNo, ref p3: PNo): lógico
+        inicio
+            se p1 = NULO e p2 = NULO entao
+                retorne VERDADEIRO
+            fim se
+            novo <- p3
+            se p1 = NULO entao
+                enquanto p2 != NULO faça
+                    novo <- aloca(TNo)
+                    se novo = NULO entao
+                        retorne FALSO
+                    fim se
+                    novo^a <- p2^a
+                    novo^exp <- p2^exp
+                    novo^prox <- NULO
+                    p2 <- p2^prox
+                fim enquanto
+            fim se
+            se p2 = NULO entao
+                enquanto p1 != NULO faça
+                    novo <- aloca(TNo)
+                    se p3 = NULO entao
+                        retorne FALSO
+                    fim se
+                    novo^a <- p1^a
+                    novo^exp <- p1^exp
+                    novo^prox <- NULO
+                    p1 <- p1^prox
+                fim enquanto
+            fim se
+            enquanto p1 != NULO ou p2 != NULO faça
+                novo <- aloca(TNo)
+                novo^prox <- NULO
+                se novo = NULO entao
+                    retorne FALSO
+                fim se
+                se p1 != NULO e p2 != NULO entao    
+                    se p1^exp = p2^exp entao
+                        novo^a <- p1^a + p2^a 
+                        novo^exp <- p1^exp
+                        p1 <- p1^prox
+                        p2 <- p2^prox
+                        novo <- novo^prox
+                    fim se
+                    se p1^exp > p2^exp entao
+                        novo^a <- p1^a 
+                        novo^exp <- p1^exp
+                        p1 <- p1^prox
+                        novo <- novo^prox
+                    senao
+                        novo^a <- p2^a 
+                        novo^exp <- p2^exp
+                        p2 <- p2^prox
+                        novo <- novo^prox
+                    fim se
+                fim se
