@@ -1,0 +1,31 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+        num: real
+        prox: PNo
+    fim registro
+var
+    função Copia_Lista_Encadeada(l: PNo): PNo
+    var
+        função Copia(l: PNo, ref l_copia: PNo): lógico
+        inicio
+            se l = NULO entao
+                retorne VERDADEIRO
+            fim se
+            l_copia <- aloca(TNo)
+            se l_copia = NULO entao
+                retorne FALSO
+            fim se
+            l_copia^num <- l^num
+            l_copia^prox <- NULO
+            retorne Copia(l^prox, l_copia^prox)
+        fim função
+
+        l_copia: PNo
+    inicio
+        l_copia = NULO
+        se Copia(l, l_copia) entao
+            retorne l_copia
+        fim se
+        retorne NULO
+    fim função

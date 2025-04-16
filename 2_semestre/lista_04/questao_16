@@ -1,0 +1,28 @@
+tipos  
+    PNo = ponteiro para TNo
+    TNo = registro
+        num: inteiro
+        prox: PNo
+    fim registro
+var
+    procedimento    Lista_Impar_E_Par(l: PNo, ref l_par, l_impar: PNo)
+    inicio
+        se l != NULO entao
+            se (l^num mod 2) = 1 entao
+                l_impar <- aloca(TNo)
+                se l_impar != NULO entao
+                    l_impar^num <- l^num
+                    l_impar^prox <- NULO
+                    Lista_Impar_E_Par(l^prox, l_par, l_impar^prox)
+                fim se
+            senão
+                l_par <- aloca(TNo)
+                se l_par != NULO entao
+                    l_par^num <- l^num
+                    l_par^prox <- NULO
+                    Lista_Impar_E_Par(l^prox, l_par^prox, l_impar)
+                fim se
+            fim se
+        fim se
+    fim procedimento
+        

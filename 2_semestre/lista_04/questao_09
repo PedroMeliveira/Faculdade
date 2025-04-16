@@ -22,4 +22,5 @@ var
         se x = l^s entao
             retorne FALSO 
         fim se
+        retorne Inserir_X_Ordenado(x, l^prox)
     fim função
