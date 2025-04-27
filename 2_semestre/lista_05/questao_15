@@ -1,0 +1,62 @@
+const
+    POS = 7
+var
+    função Retorna_7_Maior(nome: string): real
+    var
+        i, qnt   : inteiro
+        f1, f2          : sequencia de real
+        num1, num2  : real
+        trocou      : lógico
+    inicio
+        se nao abre(f1, nome) entao
+            pare
+        fim se
+        qnt <- 0
+        enquanto nao fds(f1) faça
+            leia(f1, num1)
+            qnt <- qnt + 1
+        fim enquanto
+        fecha(f1)
+        se qnt < POS entao
+            pare
+        fim se
+        i <- 0
+        enquanto i < qnt - 2 e trocou faça
+            trocou <- FALSO
+            se abre(f1, nome) entao
+                cria("Seq_Temp)
+                se abre(f2, "Seq_Temp) entao
+                    enquanto nao fds(f1) faça
+                        leia(f1, num1)
+                        se nao fds(f1) entao
+                            leia(f1, num2)
+                            se num1 < num2 entao
+                                escreva(f2, num2)
+                                escreva(f2, num1)
+                                trocou <- VERDADEIRO
+                            senao
+                                escreva(f2, num1)
+                                escreva(f2, num2)
+                            fim se
+                        senao
+                            escreva(f2, num1)
+                        fim se
+                    fim enquanto
+                    fecha(f1)
+                    fecha(f2)
+                    apaga(nome)
+                    renomeia("Seq_Temp", nome)
+                senao
+                    pare
+                fim se
+            fim se
+            i <- i + 1
+        fim enquanto
+        se abre(f1, nome) entao
+            para i de 1 ate POS faça
+                leia(f1, num1)
+            fim para
+            fecha(f1)
+            retorne num1
+        fim se
+    fim função

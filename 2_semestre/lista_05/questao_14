@@ -1,9 +1,8 @@
 função Mediana(nome: string): real
 var
     f: sequencia de inteiro
-    num, qnt, soma: inteiro
+    num, qnt, soma, i, pos_mediana: inteiro
     frequencia_num: vetor [0..3000] de inteiro
-    i, pos_mediana: real
 inicio
     se nao abre(f, nome) entao
         pare()
