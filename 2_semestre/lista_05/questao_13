@@ -1,0 +1,26 @@
+função Moda(nome: string): inteiro
+var
+    f: sequencia de inteiro
+    frequencia_num: vetor [0..3000] de inteiro
+    num, i, maior, moda: inteiro
+inicio
+    se nao abre(f, nome) entao
+        retorne -999999999
+    fim se
+    para i de 0 ate 3000 faça
+        frequencia_num[i] <- 0
+    fim para
+    enquanto nao fds(f) faça
+        leia(f, num)
+        frequencia_num[num] <- frequencia_num[num] + 1
+    fim enquanto
+    maior <- 0
+    moda <- 0
+    para i de 0 ate 3000 faça
+        se frequencia_num[i] >= maior entao
+            maior <- frequencia_num[i]
+            moda <- i 
+        fim se
+    fim para 
+    retorne moda
+fim função
