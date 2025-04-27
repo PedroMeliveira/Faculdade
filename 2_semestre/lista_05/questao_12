@@ -6,7 +6,7 @@ var
     num, media: real
     qnt: inteiro
 inicio
-    se nao abre(f) entao
+    se nao abre(f, nome) entao
         retorne -1
     fim se
     media <- 0
@@ -26,7 +26,7 @@ inicio
     media <- media / qnt
     qnt <- 0
     fecha(f)
-    se abre(f) entao
+    se abre(f, nome) entao
         enquanto nao fds(f) faça
             leia(f, s)
             se abre(f2, s) entao
