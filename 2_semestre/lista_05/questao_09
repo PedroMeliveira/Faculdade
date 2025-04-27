@@ -1,0 +1,65 @@
+procedimento (nome1, nome2, nome3: string)
+var
+    f1, f2, f3, f4: sequencia de inteiro
+    num1, num2, aux: inteiro
+    acabou1, acabou2: lógico
+inicio
+    se abre(f1, nome1) entao
+        se abre(f2, nome2) entao
+            se abre(f3, nome3) entao
+                se nao fds(f1) entao
+                    leia(f1, num1)
+                    acabou1 <- FALSO
+                senao
+                    acabou1 <- VERDADEIRO
+                fimse
+                se nao fds(f2) entao
+                    leia(f2, num2)
+                    acabou2 <- FALSO
+                senao
+                    acabou2 <- VERDADEIRO
+                fimse
+                enquanto nao acabou1 ou nao acabou2 faca
+                    se acabou1 entao
+                        escreva(f3, num2)
+                        se nao fds(f2) entao
+                            leia(f2, num2)
+                        senao
+                            acabou2 <- VERDADEIRO
+                        fimse
+                    senao
+                        se acabou2 entao
+                            escreva(f3, num1)
+                            se nao fds(f1) entao
+                                leia(f1, num1)
+                            senao
+                                acabou1 <- VERDADEIRO
+                            fimse
+                        senao
+                            se num1 <= num2 entao
+                                escreva(f3, num1)
+                                se nao fds(f1) entao
+                                    leia(f1, num1)
+                                senao
+                                    acabou1 <- VERDADEIRO
+                                fimse
+                            senao
+                                escreva(f3, num2)
+                                se nao fds(f2) entao
+                                    leia(f2, num2)
+                                senao
+                                    acabou2 <- VERDADEIRO
+                                fimse
+                            fimse
+                        fimse
+                    fimse
+                fim enquanto
+                fecha(f3)
+            fim se
+            fecha(f2)
+        fim se
+        fecha(f1)
+    fim se
+fim procedimento
+
+
