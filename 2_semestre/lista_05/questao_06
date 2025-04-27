@@ -1,0 +1,24 @@
+função Remova_Valor(nome: string, valor: inteiro): lógico
+var
+    f1, f2: sequencia de inteiro
+    num: inteiro
+inicio
+    se não abre(f1, nome) entao
+        retorne FALSO
+    fim se
+    cria("Seq_temp")
+    se não abre(f2, "Seq_temp") entao
+        retorne FALSO
+    fim se
+    enquanto nao fds(f1) faça
+        leia(f1, num)
+        se num != valor entao
+            escreva(f2, num)
+        fim se
+    fim enquanto
+    fecha(f1)
+    fecha(f2)
+    apaga(nome)
+    renomeia("Seq_temp", nome)
+    retorne VERDADEIRO
+fim função
