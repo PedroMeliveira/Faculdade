@@ -1,0 +1,21 @@
+função Soma_Posição(nome: string, valor: real): inteiro
+var
+    f: sequencia de real
+    num: real
+    pos, soma: inteiro
+inicio
+    se nao abre(f, nome) entao
+        retorne -1
+    fim se
+    pos <- 0
+    soma <- 0
+    enquanto nao fds(f) faça
+        leia(f, num)
+        pos < pos + 1
+        se num = valor entao
+            soma <- soma + pos
+        fim se
+    fim enquanto
+    fecha(f)
+    retorne soma
+fim função
