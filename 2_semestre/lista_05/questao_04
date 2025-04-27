@@ -1,0 +1,26 @@
+procedimento Escreve_Metade(nome: string)
+var
+    f: sequencia de real
+    num: real
+    qnt, i: inteiro
+inicio
+    se abre(f, nome) entao
+        qnt <- 0
+        enquanto nao fds(f) faça
+            leia(f, num)
+            qnt <- qnt + 1
+        fim enquanto
+        i <- 0
+        fecha(f)
+        se abre(f, nome) entao
+            enquanto nao fds(f) faça
+                leia(f, num)
+                se i > qnt div 2 entao
+                    escreva(num)
+                fim se
+                i <- i + 1
+            fim enquanto
+            fecha(f)
+        fim se
+    fim se
+fim procedimento
