@@ -1,0 +1,18 @@
+função Média_Seq(nome: string): real
+var
+    f: sequencia de inteiro
+    num, soma, qnt: inteiro
+inicio
+    soma <- 0
+    qnt <- 0
+    se abre(f, nome) entao
+        enquanto não fds(f) faça
+            leia(f, num)
+            soma <- soma + num
+            qnt <- qnt + 1
+        fim enquanto
+        fecha(f)
+        retorne soma/qnt
+    fim se
+    retorne -9999999
+fim função

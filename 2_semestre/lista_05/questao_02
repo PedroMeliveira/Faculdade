@@ -1,0 +1,23 @@
+função Sub_A_por_B(nome, a, b: string): inteiro
+var
+    s: string
+    qnt: inteiro
+    f1, f2: sequencia de string
+inicio
+    se não (abre(f1, nome) e abre(f2, nome)) entao
+        retorne -1
+    fim se
+    qnt <- 0
+    enquanto nao fds(f1) faça
+        leia(f1, s)
+        se s = a entao
+            qnt <- qnt + 1
+            escreva(f2, b)
+        senao
+            leia(f2, s)
+        fim se
+    fim enquanto
+    fecha(f1)
+    fecha(f2)
+    retorne qnt
+fim função
