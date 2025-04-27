@@ -8,6 +8,7 @@ inicio
     fim se
     cria("Seq_temp")
     se não abre(f2, "Seq_temp") entao
+        fecha(f1)
         retorne FALSO
     fim se
     enquanto nao fds(f1) faça

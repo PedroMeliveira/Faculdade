@@ -1,1 +1,37 @@
-função Troca_Valores(nome: string, p: inteir): inteiro
+função Troca_Valores(nome: string, p: inteiro): lógico
+var 
+    f1, f2: sequencia de real
+    num1, num2: real
+inicio
+    se nao abre(f1, nome) entao
+        retorne FALSO
+    fim se
+    cria("Seq_Temp")
+    se nao abre(f2, "Seq_Temp") entao
+        fecha(f1)
+        retorne FALSO
+    fim se
+    i <- 0
+    enquanto nao fds(f1) faça
+        leia(f1, num1)
+        i <- i + 1
+        se i = p e nao fds(f1) entao
+            leia(f1, num2)
+            escreva(f2, num2)
+            escreva(f2, num1)
+        senao
+            se i = p entao
+                fecha(f1)
+                fecha(f2)
+                apaga("Seq_Temp")
+                retorne FALSO
+            fim se
+            escreva(f2, num1)
+        fim se
+    fim enquanto
+    fecha(f1)
+    fecha(f2)
+    apaga(nome)
+    renomeia("Seq_Temp", nome)
+    retorne VERDADEIRO
+fim função
