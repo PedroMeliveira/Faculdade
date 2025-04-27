@@ -1,8 +1,9 @@
 função Mediana(nome: string): real
 var
     f: sequencia de inteiro
-    num, qnt, i, soma, pos_mediana: inteiro
+    num, qnt, soma: inteiro
     frequencia_num: vetor [0..3000] de inteiro
+    i, pos_mediana: real
 inicio
     se nao abre(f, nome) entao
         pare()
@@ -24,7 +25,7 @@ inicio
         i <- i + 1
     fim enquanto
     se qnt mod 2 = 1 ou soma > qnt div 2 entao
-        retorne real(i)
+        retorne i
     senao
         pos_mediana <- i
         enquanto frequencia_num[i] = 0 faça
