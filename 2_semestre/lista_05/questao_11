@@ -4,20 +4,20 @@ var
     s: string
     num, soma: inteiro
 inicio
-    se abre(f, nome) entao
-        soma <- 0
-        enquanto nao fds(f) faça
-            leia(f, s)
-            se abre(f2, s) entao
-                enquanto nao fds(f2) faça
-                    leia(f2, num)
-                    soma <- soma + num
-                fim enquanto
-                fecha(f2)
-            fim se
-        fim enquanto
-        fecha(f)
-        retorne soma
+    se nao abre(f, nome) entao
+        retorne -9999999
     fim se
-    retorne -9999999
+    soma <- 0
+    enquanto nao fds(f) faça
+        leia(f, s)
+        se abre(f2, s) entao
+            enquanto nao fds(f2) faça
+                leia(f2, num)
+                soma <- soma + num
+            fim enquanto
+            fecha(f2)
+        fim se
+    fim enquanto
+    fecha(f)
+    retorne soma
 fim função
