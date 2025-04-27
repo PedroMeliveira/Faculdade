@@ -1,4 +1,4 @@
-procedimento (nome1, nome2, nome3: string)
+procedimento Junta_Seq(nome1, nome2, nome3: string)
 var
     f1, f2, f3, f4: sequencia de inteiro
     num1, num2, aux: inteiro

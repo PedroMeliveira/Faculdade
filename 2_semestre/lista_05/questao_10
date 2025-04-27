@@ -1,0 +1,71 @@
+função Junta_Seq(nome1, nome2, nome3: string): lógico
+var
+    f1, f2, f3: sequencia de real
+    num1, num2: real
+    acabou1, acabou2: lógico
+inicio
+    se nao abre(f1, nome1) entao
+        retorne FALSO
+    fim se
+    se nao abre(f2, nome2) entao
+        fecha(f1)
+        retorne FALSO
+    fim se
+    se nao abre(f3, nome3) entao
+        fecha(f1)
+        fecha(f2)
+        retorne FALSO
+    fim se
+    se nao fds(f1) entao
+        leia(f1, num1)
+        acabou1 <- FALSO
+    senao
+        acabou1 <- VERDADEIRO
+    fim se
+    se nao fds(f2) entao
+        leia(f2, num2)
+        acabou2 <- FALSO
+    senao
+        acabou2 <- VERDADEIRO
+    fim se
+    enquanto nao acabou1 ou nao acabou2 faça
+        se acabou1 entao
+            escreva(f3, num2)
+            se nao fds(f2) entao
+                leia(f2, num2)
+            senao
+                acabou2 <- VERDADEIRO
+            fim se
+        senao
+            se acabou2 entao
+                escreva(f3, num1)
+                se nao fds(f1) entao
+                    leia(f1, num1)
+                senao
+                    acabou1 <- VERDADEIRO
+                fim se
+            senao
+                se num1 <= num2 entao
+                    escreva(f3, num1)
+                    se nao fds(f1) entao
+                        leia(f1, num1)
+                    senao
+                        acabou1 <- VERDADEIRO
+                    fim se
+                senao
+                    escreva(f3, num2) 
+                    se nao fds(f2) entao
+                        leia(f2, num2)
+                    senao
+                        acabou2 <- VERDADEIRO
+                    fim se
+                fim se 
+            fim se
+        fim se
+    fim enquanto
+    fecha(f1)
+    fecha(f2)
+    fecha(f3)
+    retorne VERDADEIRO
+fim função
+                                
