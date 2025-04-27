@@ -3,56 +3,30 @@ var
     f1, f2, f3, f4: sequencia de inteiro
     num1, num2, aux: inteiro
     acabou1, acabou2: lógico
+    procedimento Atualiza(ref f: sequencia de real, ref num: real, ref acabou: logico)
+    inicio
+        se nao fds(f) entao
+            leia(f, num)
+            acabou <- FALSO
+        senao
+            acabou <- VERDADEIRO
+        fimse
+    fimprocedimento
+
 inicio
     se abre(f1, nome1) entao
         se abre(f2, nome2) entao
             se abre(f3, nome3) entao
-                se nao fds(f1) entao
-                    leia(f1, num1)
-                    acabou1 <- FALSO
-                senao
-                    acabou1 <- VERDADEIRO
-                fimse
-                se nao fds(f2) entao
-                    leia(f2, num2)
-                    acabou2 <- FALSO
-                senao
-                    acabou2 <- VERDADEIRO
-                fimse
+                Atualiza(f1, num1, acabou1)
+                Atualiza(f2, num2, acabou2)
                 enquanto nao acabou1 ou nao acabou2 faca
-                    se acabou1 entao
+                    se acabou1 ou (nao acabou2 e num1 > num2) entao
                         escreva(f3, num2)
-                        se nao fds(f2) entao
-                            leia(f2, num2)
-                        senao
-                            acabou2 <- VERDADEIRO
-                        fimse
+                        Atualiza(f2, num2, acabou2)
                     senao
-                        se acabou2 entao
-                            escreva(f3, num1)
-                            se nao fds(f1) entao
-                                leia(f1, num1)
-                            senao
-                                acabou1 <- VERDADEIRO
-                            fimse
-                        senao
-                            se num1 <= num2 entao
-                                escreva(f3, num1)
-                                se nao fds(f1) entao
-                                    leia(f1, num1)
-                                senao
-                                    acabou1 <- VERDADEIRO
-                                fimse
-                            senao
-                                escreva(f3, num2)
-                                se nao fds(f2) entao
-                                    leia(f2, num2)
-                                senao
-                                    acabou2 <- VERDADEIRO
-                                fimse
-                            fimse
-                        fimse
-                    fimse
+                        escreva(f3, num1)
+                        Atualiza(f1, num1, acabou1)
+                    fim se
                 fim enquanto
                 fecha(f3)
             fim se

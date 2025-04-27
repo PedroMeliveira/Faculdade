@@ -3,6 +3,15 @@ var
     f1, f2, f3: sequencia de real
     num1, num2: real
     acabou1, acabou2: lógico
+    procedimento Atualiza(ref f: sequencia de real, ref num: real, ref acabou: logico)
+    inicio
+        se nao fds(f) entao
+            leia(f, num)
+            acabou <- FALSO
+        senao
+            acabou <- VERDADEIRO
+        fimse
+    fim procedimento
 inicio
     se nao abre(f1, nome1) entao
         retorne FALSO
@@ -16,51 +25,15 @@ inicio
         fecha(f2)
         retorne FALSO
     fim se
-    se nao fds(f1) entao
-        leia(f1, num1)
-        acabou1 <- FALSO
-    senao
-        acabou1 <- VERDADEIRO
-    fim se
-    se nao fds(f2) entao
-        leia(f2, num2)
-        acabou2 <- FALSO
-    senao
-        acabou2 <- VERDADEIRO
-    fim se
+    Atualiza(f1, num1, acabou1)
+    Atualiza(f2, num2, acabou2)
     enquanto nao acabou1 ou nao acabou2 faça
-        se acabou1 entao
+        se acabou1 ou (nao acabou2 e num1 > num2) entao
             escreva(f3, num2)
-            se nao fds(f2) entao
-                leia(f2, num2)
-            senao
-                acabou2 <- VERDADEIRO
-            fim se
+            Atualiza(f2, num2, acabou2)
         senao
-            se acabou2 entao
-                escreva(f3, num1)
-                se nao fds(f1) entao
-                    leia(f1, num1)
-                senao
-                    acabou1 <- VERDADEIRO
-                fim se
-            senao
-                se num1 <= num2 entao
-                    escreva(f3, num1)
-                    se nao fds(f1) entao
-                        leia(f1, num1)
-                    senao
-                        acabou1 <- VERDADEIRO
-                    fim se
-                senao
-                    escreva(f3, num2) 
-                    se nao fds(f2) entao
-                        leia(f2, num2)
-                    senao
-                        acabou2 <- VERDADEIRO
-                    fim se
-                fim se 
-            fim se
+            escreva(f3, num1)
+            Atualiza(f1, num1, acabou1)
         fim se
     fim enquanto
     fecha(f1)
