@@ -1,6 +1,7 @@
 função Soma_Valores_Seq(nome: string): inteiro
 var
-    f, f2: sequencia de string
+    f: sequencia de string
+    f2: sequencia de inteiro
     s: string
     num, soma: inteiro
 inicio
@@ -16,7 +17,8 @@ inicio
                 soma <- soma + num
             fim enquanto
             fecha(f2)
-        fim se
+        senao
+            retorne -9999999
     fim enquanto
     fecha(f)
     retorne soma

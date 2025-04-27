@@ -1,0 +1,44 @@
+função Qnt_Acima_Média(nome: string): inteiro
+var 
+    f: sequencia de string
+    f2: sequencia de real
+    s: string
+    num, media: real
+    qnt: inteiro
+inicio
+    se nao abre(f) entao
+        retorne -1
+    fim se
+    media <- 0
+    qnt<- 0
+    enquanto nao fds(f) faça
+        leia(f, s)
+        se abre(f2, s) entao
+            enquanto nao fds(f2) faça
+                leia(f2, num)
+                media <- media + num
+                qnt <- qnt + 1
+            fim enquanto
+            fecha(f2)
+        senao
+            retorne -1
+    fim enquanto
+    media <- media / qnt
+    qnt <- 0
+    fecha(f)
+    se abre(f) entao
+        enquanto nao fds(f) faça
+            leia(f, s)
+            se abre(f2, s) entao
+                enquanto nao fds(f2) faça
+                leia(f2, num)
+                se num > media entao
+                    qnt <- qnt + 1
+                fim se
+                fecha(f2)
+            fim se
+        fim enquanto
+        fecha(f)
+        retorne qnt
+    fim se
+fim função
