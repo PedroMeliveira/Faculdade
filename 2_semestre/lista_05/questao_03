@@ -1,0 +1,23 @@
+função Duplica_Seq(nome: string): lógico
+var
+    f1, f2: sequencia de inteiro
+    num, qnt: inteiro
+inicio
+    se nao( abre(f1, nome) e abre(f2, nome)) entao
+        retorne FALSO
+    fim se
+    qnt <- 0
+    enquanto nao fds(f1) faça
+        leia(f1, num)
+        qnt <- qnt + 1
+    fim enquanto
+    i <- 0
+    enquanto i < qnt faça
+        leia(f2, num)
+        escreva(f1, num)
+        i <- i + 1
+    fim enquanto
+    fecha(f1)
+    fecha(f2)
+    retorne VERDADEIRO
+fim função
