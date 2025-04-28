@@ -7,6 +7,18 @@ var
         f1, f2          : sequencia de real
         num1, num2  : real
         trocou      : lógico
+        procedimento Compara_e_Troca(num1, num2: real, ref f: sequencia de real,ref add, trocou: lógico)
+        inicio
+             se num1 < num2 entao
+                escreva(f, num2)
+                add <- FALSO
+                trocou <- VERDADEIRO
+            senao
+                escreva(f, num1)
+                add <- VERDADEIRO
+            fim se
+        fim procedimento
+
     inicio
         se nao abre(f1, nome) entao
             pare
@@ -20,37 +32,39 @@ var
         se qnt < POS entao
             pare
         fim se
-        i <- 0
-        enquanto i < qnt - 2 e trocou faça
+        trocou <- VERDADEIRO
+        enquanto trocou faça
             trocou <- FALSO
             se abre(f1, nome) entao
                 cria("Seq_Temp)
                 se abre(f2, "Seq_Temp) entao
+                    leia(f1, num1)
+                    se nao fds(f1) entao
+                        leia(f1, num2)
+                        Compara_e_Troca(num1, num2, f2, add_num1, trocou)
+                    fim se
                     enquanto nao fds(f1) faça
-                        leia(f1, num1)
-                        se nao fds(f1) entao
-                            leia(f1, num2)
-                            se num1 < num2 entao
-                                escreva(f2, num2)
-                                escreva(f2, num1)
-                                trocou <- VERDADEIRO
-                            senao
-                                escreva(f2, num1)
-                                escreva(f2, num2)
-                            fim se
+                        se add_num1 entao
+                            leia(f1, num1)
                         senao
-                            escreva(f2, num1)
+                            leia(f1, num2)
                         fim se
+                        Compara_e_Troca(num1, num2, f2, add_num1, trocou)
                     fim enquanto
+                    se add_num1 entao
+                        escreva(f2, num2)
+                    senao
+                        escreva(f2, num1)
+                    fim se
                     fecha(f1)
                     fecha(f2)
                     apaga(nome)
-                    renomeia("Seq_Temp", nome)
+                    renomeia("Seq_Temp", nome)           
                 senao
+                    fecha(f1)
                     pare
                 fim se
             fim se
-            i <- i + 1
         fim enquanto
         se abre(f1, nome) entao
             para i de 1 ate POS faça
