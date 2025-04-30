@@ -17,11 +17,11 @@ inicio
         qnt <- qnt + 1
     fim enquanto
     fecha(f)
-    i <- 0
+    i <- -1
     soma <- 0
     enquanto soma < qnt div 2 faça
-        soma <- soma + frequencia_num[i]
         i <- i + 1
+        soma <- soma + frequencia_num[i]
     fim enquanto
     se qnt mod 2 = 1 ou soma > qnt div 2 entao
         retorne i
