@@ -1,0 +1,17 @@
+algoritmo
+var
+	i, n: inteiro
+    V: vetor[1..111] de real
+inicio
+    escreva("BLA BLA BLA")
+    leia(n)
+    enquanto n < 1 ou n > 111 faça 
+        escreva("BLA BLA BLA")
+        leia(n)
+    fim enquanto
+    para i de 1 ate n faça
+        leia(V[i])
+    fim para
+    para i de 1 até n faça 
+        escreva(V[n + 1 - i])
+    fim para

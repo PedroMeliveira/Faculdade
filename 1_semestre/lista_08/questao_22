@@ -1,0 +1,35 @@
+verificou <- VERDADEIRO
+se nA >= nB entao 
+    para i de 1 ate nB faça
+        j <- 1
+        achou <- FALSO
+        enquanto j <= nA e B[i] != A[j] faça
+            j <- j + 1
+        fim enquanto
+        se j <= nA entao
+            achou <- VERDADEIRO
+        fim se
+        verificou <- verificou e achou
+    fim para
+senao
+    para i de 1 ate nA faça
+        j <- 1
+        achou <- FALSO
+        enquanto j <= nB e B[j] != A[i] faça
+            j <- j + 1
+        fim enquanto
+        se j <= nB entao
+            achou <- VERDADEIRO
+        fim se
+        verificou <- verificou e achou
+    fim para
+fim se
+se verificou entao
+    se nA >= nB entao
+        escreva("O vetor B esta contido em A")
+    senao
+        escreva("O vetor A esta contido em B")
+    fim se
+senao
+    escreva("São conjuntos diferentes")
+fim se

@@ -1,0 +1,31 @@
+algoritmo 
+var
+    trocou, subiu: lógico
+    A: vetor[1..1000] de real
+    i, dist, subida: inteiro
+    aux: real
+inicio
+    trocou <- VERDADEIRO
+    subida <- 0
+    dis <- 0
+    enquanto trocou faça
+        trocou <- FALSO
+        subiu <- FALSO
+        para i de 1 ate 999 faça
+            se A[i] > A[i + 1] entao
+                aux <- A[i + 1]
+                A[i + 1] <- A[i]
+                A[i] <- aux
+                se nao subiu entao
+                    subida <- subida + 1
+                    subiu <- VERDADEIRO
+                fim se
+                dis <- dis + 1
+                trocou <- VERDADEIRO
+            senao
+                subiu <- FALSO
+            fim se
+        fim para
+    fim enquanto
+    escreva("A média das distâncias de todas as subidas no bubble sort foi de ", dis/subida)
+fim algoritmo

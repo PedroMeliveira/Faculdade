@@ -1,0 +1,30 @@
+algoritmo
+var
+    v: vetor[0..25] de lógico
+    s: string
+    t: inteiro
+    achou_todas: lógico
+inicio
+    leia(string)
+    t <- tamanho(string)
+    para i de 0 ate t faça
+        v[i] <- FALSO
+    fim para
+    para i de 0 ate t faça
+        se string[i] >= 'a' e string[i] <= 'z' entao
+            v[asc(string[i]) - asc('a')] <- VERDADEIRO
+        fim se
+        se string[i] >= 'A' e string[i] <= 'Z' entao
+            v[asc(string[i]) - asc('A')] <- VERDADEIRO
+        fim se
+    fim para
+    achou_todas <- VERDADEIRO
+    para i de 0 ate t faça
+        achou_todas <- achou_todas e v[i]
+    fim para
+    se achou_todas entao
+        escreva("Todas aparecem!")
+    senao
+        escreva("Nao aparecem todas!")
+    fim se
+fim algoritmo
