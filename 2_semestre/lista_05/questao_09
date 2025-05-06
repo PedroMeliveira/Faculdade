@@ -1,31 +1,34 @@
+tipos
+    Seq = sequencia de real
+var
 procedimento Junta_Seq(nome1, nome2, nome3: string)
 var
-    f1, f2, f3, f4: sequencia de inteiro
-    num1, num2, aux: inteiro
-    acabou1, acabou2: lógico
-    procedimento Atualiza(ref f: sequencia de real, ref num: real, ref acabou: logico)
+    f1, f2, f3: sequencia de real
+    num1, num2: inteiro
+    acabou_seq1, acabou_seq2: lógico
+    função Atualiza(ref f: Seq, ref num: real): lógico
     inicio
         se nao fds(f) entao
             leia(f, num)
-            acabou <- FALSO
+            retorne FALSO
         senao
-            acabou <- VERDADEIRO
+            retorne VERDADEIRO
         fimse
-    fimprocedimento
+    fim função
 
 inicio
     se abre(f1, nome1) entao
         se abre(f2, nome2) entao
             se abre(f3, nome3) entao
-                Atualiza(f1, num1, acabou1)
-                Atualiza(f2, num2, acabou2)
-                enquanto nao acabou1 ou nao acabou2 faca
-                    se acabou1 ou (nao acabou2 e num1 > num2) entao
+                acabou_seq1 <- Atualiza(f1, num1)
+                acabou_seq2 <- Atualiza(f2, num2)
+                enquanto nao acabou_seq1 ou nao acabou_seq2 faca
+                    se acabou_seq1 ou (nao acabou_seq2 e num1 > num2) entao
                         escreva(f3, num2)
-                        Atualiza(f2, num2, acabou2)
+                        acabou_seq2 <- Atualiza(f2, num2)
                     senao
                         escreva(f3, num1)
-                        Atualiza(f1, num1, acabou1)
+                        acabou_seq1 <- Atualiza(f1, num1)
                     fim se
                 fim enquanto
                 fecha(f3)
